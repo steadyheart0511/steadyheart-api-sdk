@@ -4,6 +4,7 @@ import com.steadyheart.steadyheartsdk.client.SteadyheartClient;
 import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
 import com.steadyheart.steadyheartsdk.entity.request.BaseRequest;
 import com.steadyheart.steadyheartsdk.entity.response.BaseResponse;
+import com.steadyheart.steadyheartsdk.entity.response.JokeResponse;
 import com.steadyheart.steadyheartsdk.entity.response.TranslationResponse;
 
 /**
@@ -32,5 +33,17 @@ public interface ApiService {
      */
     <O, T> BaseResponse<T> request(SteadyheartClient steadyheartClient, BaseRequest<O, T> request);
 
+    /**
+     * 翻译接口
+     * @param translationParams 翻译参数
+     * @return  翻译结果
+     */
+    BaseResponse<TranslationResponse> getTranslation(TranslationParams translationParams);
+
+    /**
+     * 获取笑话
+     * @return  笑话
+     */
+    BaseResponse<JokeResponse> getJoke();
 
 }
