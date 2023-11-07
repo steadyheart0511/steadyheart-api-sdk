@@ -1,10 +1,12 @@
 package com.steadyheart.steadyheartsdk.service;
 
 import com.steadyheart.steadyheartsdk.client.SteadyheartClient;
+import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
 import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
 import com.steadyheart.steadyheartsdk.entity.request.BaseRequest;
 import com.steadyheart.steadyheartsdk.entity.response.BaseResponse;
 import com.steadyheart.steadyheartsdk.entity.response.JokeResponse;
+import com.steadyheart.steadyheartsdk.entity.response.RandomWallpaperResponse;
 import com.steadyheart.steadyheartsdk.entity.response.TranslationResponse;
 
 /**
@@ -45,5 +47,13 @@ public interface ApiService {
      * @return  笑话
      */
     BaseResponse<JokeResponse> getJoke();
+
+
+    /**
+     * 获取随机壁纸
+     * @param randomWallpaperParams 获取随机壁纸所需参数
+     * @return  壁纸地址
+     */
+    BaseResponse<RandomWallpaperResponse> getRandomWallpaper(RandomWallpaperParams randomWallpaperParams);
 
 }
