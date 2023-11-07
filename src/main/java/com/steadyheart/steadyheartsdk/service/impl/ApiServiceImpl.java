@@ -1,14 +1,13 @@
 package com.steadyheart.steadyheartsdk.service.impl;
 
+import com.steadyheart.steadyheartsdk.entity.params.ExplainWordParams;
 import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
 import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
+import com.steadyheart.steadyheartsdk.entity.request.ExplainWordRequest;
 import com.steadyheart.steadyheartsdk.entity.request.JokeRequest;
 import com.steadyheart.steadyheartsdk.entity.request.RandomWallpaperRequest;
 import com.steadyheart.steadyheartsdk.entity.request.TranslationRequest;
-import com.steadyheart.steadyheartsdk.entity.response.BaseResponse;
-import com.steadyheart.steadyheartsdk.entity.response.JokeResponse;
-import com.steadyheart.steadyheartsdk.entity.response.RandomWallpaperResponse;
-import com.steadyheart.steadyheartsdk.entity.response.TranslationResponse;
+import com.steadyheart.steadyheartsdk.entity.response.*;
 import com.steadyheart.steadyheartsdk.service.ApiService;
 import com.steadyheart.steadyheartsdk.service.BaseService;
 
@@ -17,6 +16,20 @@ import com.steadyheart.steadyheartsdk.service.BaseService;
  * @create 2023-11-03 8:56
  */
 public class ApiServiceImpl extends BaseService implements ApiService {
+
+
+    /**
+     * 名词解释
+     *
+     * @param explainWordParams 名词解释所需参数
+     * @return 解释结果
+     */
+    @Override
+    public BaseResponse<ExplainWordResponse> getExplainWord(ExplainWordParams explainWordParams) {
+        ExplainWordRequest explainWordRequest = new ExplainWordRequest();
+        explainWordRequest.setRequestParams(explainWordParams);
+        return request(explainWordRequest);
+    }
 
     /**
      * 获取随机壁纸

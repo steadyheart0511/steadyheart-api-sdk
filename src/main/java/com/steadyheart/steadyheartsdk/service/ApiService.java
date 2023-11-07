@@ -1,13 +1,11 @@
 package com.steadyheart.steadyheartsdk.service;
 
 import com.steadyheart.steadyheartsdk.client.SteadyheartClient;
+import com.steadyheart.steadyheartsdk.entity.params.ExplainWordParams;
 import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
 import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
 import com.steadyheart.steadyheartsdk.entity.request.BaseRequest;
-import com.steadyheart.steadyheartsdk.entity.response.BaseResponse;
-import com.steadyheart.steadyheartsdk.entity.response.JokeResponse;
-import com.steadyheart.steadyheartsdk.entity.response.RandomWallpaperResponse;
-import com.steadyheart.steadyheartsdk.entity.response.TranslationResponse;
+import com.steadyheart.steadyheartsdk.entity.response.*;
 
 /**
  * api调用
@@ -56,4 +54,10 @@ public interface ApiService {
      */
     BaseResponse<RandomWallpaperResponse> getRandomWallpaper(RandomWallpaperParams randomWallpaperParams);
 
+    /**
+     * 名词解释
+     * @param explainWordParams 名词解释所需参数
+     * @return  解释结果
+     */
+    BaseResponse<ExplainWordResponse> getExplainWord(ExplainWordParams explainWordParams);
 }
