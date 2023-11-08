@@ -3,6 +3,7 @@ package com.steadyheart.steadyheartsdk.service;
 import com.steadyheart.steadyheartsdk.client.SteadyheartClient;
 import com.steadyheart.steadyheartsdk.entity.params.ExplainWordParams;
 import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
+import com.steadyheart.steadyheartsdk.entity.params.RecommendParams;
 import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
 import com.steadyheart.steadyheartsdk.entity.request.BaseRequest;
 import com.steadyheart.steadyheartsdk.entity.response.*;
@@ -60,4 +61,11 @@ public interface ApiService {
      * @return  解释结果
      */
     BaseResponse<ExplainWordResponse> getExplainWord(ExplainWordParams explainWordParams);
+
+    /**
+     * 获取推荐信息
+     * @param recommendParams   获取推荐信息所需参数
+     * @return  推荐结果
+     */
+    BaseResponse<RecommendResponse> getRecommendInfo(RecommendParams recommendParams);
 }

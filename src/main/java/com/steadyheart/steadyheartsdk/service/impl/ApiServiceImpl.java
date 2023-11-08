@@ -2,11 +2,9 @@ package com.steadyheart.steadyheartsdk.service.impl;
 
 import com.steadyheart.steadyheartsdk.entity.params.ExplainWordParams;
 import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
+import com.steadyheart.steadyheartsdk.entity.params.RecommendParams;
 import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
-import com.steadyheart.steadyheartsdk.entity.request.ExplainWordRequest;
-import com.steadyheart.steadyheartsdk.entity.request.JokeRequest;
-import com.steadyheart.steadyheartsdk.entity.request.RandomWallpaperRequest;
-import com.steadyheart.steadyheartsdk.entity.request.TranslationRequest;
+import com.steadyheart.steadyheartsdk.entity.request.*;
 import com.steadyheart.steadyheartsdk.entity.response.*;
 import com.steadyheart.steadyheartsdk.service.ApiService;
 import com.steadyheart.steadyheartsdk.service.BaseService;
@@ -17,6 +15,18 @@ import com.steadyheart.steadyheartsdk.service.BaseService;
  */
 public class ApiServiceImpl extends BaseService implements ApiService {
 
+    /**
+     * 获取推荐信息
+     *
+     * @param recommendParams 获取推荐信息所需参数
+     * @return 推荐结果
+     */
+    @Override
+    public BaseResponse<RecommendResponse> getRecommendInfo(RecommendParams recommendParams) {
+        RecommendRequest recommendRequest = new RecommendRequest();
+        recommendRequest.setRequestParams(recommendParams);
+        return request(recommendRequest);
+    }
 
     /**
      * 名词解释
