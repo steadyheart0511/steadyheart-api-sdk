@@ -1,10 +1,7 @@
 package com.steadyheart.steadyheartsdk.service;
 
 import com.steadyheart.steadyheartsdk.client.SteadyheartClient;
-import com.steadyheart.steadyheartsdk.entity.params.ExplainWordParams;
-import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
-import com.steadyheart.steadyheartsdk.entity.params.RecommendParams;
-import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
+import com.steadyheart.steadyheartsdk.entity.params.*;
 import com.steadyheart.steadyheartsdk.entity.request.BaseRequest;
 import com.steadyheart.steadyheartsdk.entity.response.*;
 
@@ -68,4 +65,11 @@ public interface ApiService {
      * @return  推荐结果
      */
     BaseResponse<RecommendResponse> getRecommendInfo(RecommendParams recommendParams);
+
+    /**
+     * 获取ip归属地
+     * @param ipInfoParams  获取ip归属地所需参数
+     * @return  ip归属地相关信息
+     */
+    BaseResponse<IpInfoResponse> getIpInfo(IpInfoParams ipInfoParams);
 }

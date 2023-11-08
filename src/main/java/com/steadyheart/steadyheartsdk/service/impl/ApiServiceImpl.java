@@ -1,9 +1,6 @@
 package com.steadyheart.steadyheartsdk.service.impl;
 
-import com.steadyheart.steadyheartsdk.entity.params.ExplainWordParams;
-import com.steadyheart.steadyheartsdk.entity.params.RandomWallpaperParams;
-import com.steadyheart.steadyheartsdk.entity.params.RecommendParams;
-import com.steadyheart.steadyheartsdk.entity.params.TranslationParams;
+import com.steadyheart.steadyheartsdk.entity.params.*;
 import com.steadyheart.steadyheartsdk.entity.request.*;
 import com.steadyheart.steadyheartsdk.entity.response.*;
 import com.steadyheart.steadyheartsdk.service.ApiService;
@@ -14,6 +11,19 @@ import com.steadyheart.steadyheartsdk.service.BaseService;
  * @create 2023-11-03 8:56
  */
 public class ApiServiceImpl extends BaseService implements ApiService {
+
+    /**
+     * 获取ip归属地
+     *
+     * @param ipInfoParams 获取ip归属地所需参数
+     * @return ip归属地相关信息
+     */
+    @Override
+    public BaseResponse<IpInfoResponse> getIpInfo(IpInfoParams ipInfoParams) {
+        IpInfoRequest ipInfoRequest = new IpInfoRequest();
+        ipInfoRequest.setRequestParams(ipInfoParams);
+        return request(ipInfoRequest);
+    }
 
     /**
      * 获取推荐信息
