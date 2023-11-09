@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.steadyheart</groupId>
     <artifactId>steadyheart-api-sdk</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.0</version>
     <name>steadyheart-api-sdk</name>
     <description>steadyheart-api-sdk</description>
     <properties>

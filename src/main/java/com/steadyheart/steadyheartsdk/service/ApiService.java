@@ -72,4 +72,10 @@ public interface ApiService {
      * @return  ip归属地相关信息
      */
     BaseResponse<IpInfoResponse> getIpInfo(IpInfoParams ipInfoParams);
+
+    /**
+     * 获取情话
+     * @return  情话
+     */
+    BaseResponse<RandomLoveTalkResponse> getRandomLoveTalk();
 }

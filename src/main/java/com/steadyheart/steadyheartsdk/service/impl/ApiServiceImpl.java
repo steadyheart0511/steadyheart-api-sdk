@@ -13,6 +13,17 @@ import com.steadyheart.steadyheartsdk.service.BaseService;
 public class ApiServiceImpl extends BaseService implements ApiService {
 
     /**
+     * 获取情话
+     *
+     * @return 情话
+     */
+    @Override
+    public BaseResponse<RandomLoveTalkResponse> getRandomLoveTalk() {
+        RandomLoveTalkRequest randomLoveTalkRequest = new RandomLoveTalkRequest();
+        return request(randomLoveTalkRequest);
+    }
+
+    /**
      * 获取ip归属地
      *
      * @param ipInfoParams 获取ip归属地所需参数
