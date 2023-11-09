@@ -1,5 +1,6 @@
 package com.steadyheart.steadyheartsdk.service.impl;
 
+import com.steadyheart.steadyheartsdk.client.SteadyheartClient;
 import com.steadyheart.steadyheartsdk.entity.params.*;
 import com.steadyheart.steadyheartsdk.entity.request.*;
 import com.steadyheart.steadyheartsdk.entity.response.*;
@@ -95,5 +96,99 @@ public class ApiServiceImpl extends BaseService implements ApiService {
     public BaseResponse<JokeResponse> getJoke() {
         JokeRequest jokeRequest = new JokeRequest();
         return request(jokeRequest);
+    }
+
+    /**
+     * 翻译接口
+     *
+     * @param steadyheartClient sdk客户端
+     * @param translationParams 翻译参数
+     * @return 翻译结果
+     */
+    @Override
+    public BaseResponse<TranslationResponse> getTranslation(SteadyheartClient steadyheartClient, TranslationParams translationParams) {
+        TranslationRequest translationRequest = new TranslationRequest();
+        translationRequest.setRequestParams(translationParams);
+        return request(steadyheartClient,translationRequest);
+    }
+
+    /**
+     * 获取笑话
+     *
+     * @param steadyheartClient sdk客户端
+     * @return 笑话
+     */
+    @Override
+    public BaseResponse<JokeResponse> getJoke(SteadyheartClient steadyheartClient) {
+        JokeRequest jokeRequest = new JokeRequest();
+        return request(steadyheartClient,jokeRequest);
+    }
+
+    /**
+     * 获取随机壁纸
+     *
+     * @param steadyheartClient     sdk客户端
+     * @param randomWallpaperParams 获取随机壁纸所需参数
+     * @return 壁纸地址
+     */
+    @Override
+    public BaseResponse<RandomWallpaperResponse> getRandomWallpaper(SteadyheartClient steadyheartClient, RandomWallpaperParams randomWallpaperParams) {
+        RandomWallpaperRequest randomWallpaperRequest = new RandomWallpaperRequest();
+        randomWallpaperRequest.setRequestParams(randomWallpaperParams);
+        return request(steadyheartClient,randomWallpaperRequest);
+    }
+
+    /**
+     * 名词解释
+     *
+     * @param steadyheartClient sdk客户端
+     * @param explainWordParams 名词解释所需参数
+     * @return 解释结果
+     */
+    @Override
+    public BaseResponse<ExplainWordResponse> getExplainWord(SteadyheartClient steadyheartClient, ExplainWordParams explainWordParams) {
+        ExplainWordRequest explainWordRequest = new ExplainWordRequest();
+        explainWordRequest.setRequestParams(explainWordParams);
+        return request(steadyheartClient,explainWordRequest);
+    }
+
+    /**
+     * 获取推荐信息
+     *
+     * @param steadyheartClient sdk客户端
+     * @param recommendParams   获取推荐信息所需参数
+     * @return 推荐结果
+     */
+    @Override
+    public BaseResponse<RecommendResponse> getRecommendInfo(SteadyheartClient steadyheartClient, RecommendParams recommendParams) {
+        RecommendRequest recommendRequest = new RecommendRequest();
+        recommendRequest.setRequestParams(recommendParams);
+        return request(steadyheartClient,recommendRequest);
+    }
+
+    /**
+     * 获取ip归属地
+     *
+     * @param steadyheartClient sdk客户端
+     * @param ipInfoParams      获取ip归属地所需参数
+     * @return ip归属地相关信息
+     */
+    @Override
+    public BaseResponse<IpInfoResponse> getIpInfo(SteadyheartClient steadyheartClient, IpInfoParams ipInfoParams) {
+        IpInfoRequest ipInfoRequest = new IpInfoRequest();
+        ipInfoRequest.setRequestParams(ipInfoParams);
+        return request(steadyheartClient,ipInfoRequest);
+    }
+
+    /**
+     * 获取情话
+     *
+     * @param steadyheartClient sdk客户端
+     * @return 情话
+     */
+    @Override
+    public BaseResponse<RandomLoveTalkResponse> getRandomLoveTalk(SteadyheartClient steadyheartClient) {
+        RandomLoveTalkRequest randomLoveTalkRequest = new RandomLoveTalkRequest();
+        return request(steadyheartClient,randomLoveTalkRequest);
     }
 }

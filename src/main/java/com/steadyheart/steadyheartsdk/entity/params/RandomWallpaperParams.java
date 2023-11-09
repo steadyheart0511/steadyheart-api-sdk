@@ -21,9 +21,4 @@ public class RandomWallpaperParams implements Serializable {
      */
     private String lx;
 
-    /**
-     * 返回格式是json
-     */
-    private String format = "json";
-
 }
